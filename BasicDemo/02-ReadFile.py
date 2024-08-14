@@ -1,4 +1,6 @@
-
+'''‘'‘
+测试文件的打开和读取
+’'’'''
 
 def open_file(file_name):
     file_handle = open(file_name,"w", encoding="utf-8")
