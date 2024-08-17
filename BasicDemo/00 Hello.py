@@ -140,6 +140,9 @@ def lambda_test():
     print(tuple1)
 
 
+'''
+定义一个函数的输入和输出类型为 int
+'''
 def function_input_type(nums:list[int], target:int)->list[int]:
     array_len = len(nums)
     result = []
@@ -148,7 +151,7 @@ def function_input_type(nums:list[int], target:int)->list[int]:
         result.append(nums[i])
     return result
 
-def lisst_as_stack():
+def list_as_stack():
     my_stack = [1,23,45,5,6]
 
     my_stack.append(34)
