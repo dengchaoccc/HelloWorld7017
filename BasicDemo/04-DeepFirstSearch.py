@@ -19,7 +19,6 @@
 '''
 
 class Node:
-
     def __init__(self, id:int, next_hop_number:int, next_hop_list:list[int]):
         self.id = id
         self.next_hop_number = min(next_hop_number, len(next_hop_list))
