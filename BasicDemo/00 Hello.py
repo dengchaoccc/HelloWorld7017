@@ -32,6 +32,22 @@ def print_range():
     print((x))
     for i in x:
         print(i)
+#index 方法的使用
+def index_of_list():
+    array = [12,3,55,3,57,3,68]
+
+    #index 方法，入参： 目标数字，起始下标，终点下标
+    index1 = array.index(3)
+    print("fist found : {}".format(index1))
+
+    //从第四个和第六个数中间找到3
+    index2 = array.index(3,4,6)
+    print("fist found ,index{} start from 4: {}".format(index2))
+
+    #最后一个值缺省
+    index3 = array.index(3,3)
+    print("fist found ,index{} start from 4: {}".format(index3))
+
 '''
 假设姓名存在数组的第一个位置，直接用第一个元素
 '''
@@ -43,6 +59,10 @@ list. sort 会自动进行排序
 backup = sorted(list) 会建立一个副本，本体不做变更
 '''
 def test_sort_list():
+    '''
+    用[]是列表，数组，长度可变，元素可以是不同类型的
+    用（）包围的是元组，里面的数据可以是不同的类型，长度不可变
+    '''
     students = [("lily", 156,88), ("Jack", 156, 88), ("Tom", 167,8872), ("Lee",132, 89), ("Ray", 178,67) ]
     #按照姓名逆序排序
     students.sort(key = lambda  inputList:inputList[0], reverse=True)
@@ -93,12 +113,15 @@ def dic_test():
     result = dic2.get(1)
     print("find key = 1 value = {}".format(result))
 
-    #字典的便利
+    #字典的遍历
     for k,v in dic1:
         print("key ={}, value = {}".format(k,v))
 
     for k in dic1.keys():
         print(k)
+
+    #字典的插入元素
+
 
 #基本上用不上
 def set_test():
@@ -180,6 +203,22 @@ def list_as_queue():
     #队尾先出
     my_queue.pop()
     print(my_queue)
+
+#数据的反向遍历的方法
+'''
+range 三个入参(start, end, step)
+'''
+def revers_visit():
+    list1 = [2,3,4,55,56,46,34,23,32]
+    #方法1 ，直接计算对应位置的逆序
+    for i in range (0, len(list1)):
+        print(list1[ len(list1)- i])
+    #方法二：用切片
+    for i in list1[::-2]:
+        print(i)
+    #方法3：使用range,从倒数第一个到最后一个.注意这里的end是-1， 表示下标-1+1 = 0。因未访问到end-1就停止了
+    for i in range(len(list1), -1, -2):
+        print(i)
 
 #二维数组的排序
 def matrix_sort():

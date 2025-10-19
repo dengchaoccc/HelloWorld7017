@@ -26,4 +26,4 @@ def merge_excel(dir, key_name):
         if "cvs" in file_path:
             file_handle_list.append(pd.read_csv(file_path, encoding = "gb2312", header = None))
         elif "xlsx" in file_name or "xls" in file_name:
-            file_handle_list.append(pd.read_excel(file_path, encoding="gb2312")
+            file_handle_list.append(pd.read_excel(file_path, encoding="gb2312"))
