@@ -38,9 +38,9 @@ def index_of_list():
 
     #index 方法，入参： 目标数字，起始下标，终点下标
     index1 = array.index(3)
-    print("fist found : {}".format(index1))
+    print("fist found 3 at index: {}".format(index1))
 
-    //从第四个和第六个数中间找到3
+    #从第四个和第六个数中间找到3
     index2 = array.index(3,4,6)
     print("fist found ,index{} start from 4: {}".format(index2))
 
