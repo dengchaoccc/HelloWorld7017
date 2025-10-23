@@ -13,8 +13,10 @@
     :type n: int
     :rtype: None Do not return anything, modify nums1 in-place instead.
 """
-
-def merge( nums1:int, m:int, nums2:int, n:int):
+'''
+知识点：如何定义一个函数，指定入参和出参的类型，尤其是集合类型
+'''
+def merge( nums1:list[int], m:int, nums2:list[int], n:int)->list[int]:
 
     tempNums:list[int] = []
 
@@ -23,7 +25,7 @@ def merge( nums1:int, m:int, nums2:int, n:int):
     for i in range(0, n):
         tempNums.append(nums2[i])
     tempNums.sort()
-    nums1.clear()
+    nums1.clear()#
 
     #new_list = old_list.copy()也可以的  new_list = old_list[:]
     for i in range(0, m + n):
@@ -36,8 +38,9 @@ def test_merge():
     m = 3
     nums2 = [2, 5, 6]
     n = 3
+    print(f"before merge \n nums1={nums1},nums2={nums2}")
     merge(nums1, m, nums2, n)
 
-    print(nums1)
+    print(f"after merge nums1={nums1}")
 
 test_merge()
