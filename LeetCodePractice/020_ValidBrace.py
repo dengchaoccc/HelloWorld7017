@@ -47,8 +47,8 @@ class Solution:
 
         if len(brace_stack) == 0:
             return True
-        else:
-            return False
+
+        return False
 
 if __name__ == "__main__":
     obj = Solution()

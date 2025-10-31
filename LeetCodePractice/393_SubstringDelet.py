@@ -36,7 +36,7 @@ class Solution:
             find_flag = False
             for j in range(origin_index, len(t)):
 
-                if (s[i] == t[j]):
+                if  s[i] == t[j] :
                     origin_index = j + 1
                     find_flag = True
                     break

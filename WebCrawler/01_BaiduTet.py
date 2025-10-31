@@ -25,9 +25,10 @@ def getBaidu():
     #如果是图片类型，就要使用response.content
     content = response.text
     now_time = datetime.datetime.now()
-    #print(response.text)
-    #如果加时间：{now_time:%Y-%m-%d %H:%M:%S}
-    with open(f"baidu.html","w", encoding="utf-8") as f:
+    print(response.text)
+    print(response.encoding)
+    #如果加时间：{now_time:%Y-%m-%d %H:%M:%S}, 这里加入编码很关键，否则全是乱码
+    with open(f"baidu.html","w", encoding="ISO-8859-1") as f:
         f.write(content)
         f.close()
 
@@ -44,13 +45,14 @@ def get_douban():
             'Referer': 'https://www.douban.com/',}
 
     response = requests.get(url,  headers=headers)
-    content = response.text
+    content = response.content
+    txt =  content.decode(response.encoding)
     now_time = datetime.datetime.now()
-    #print(content)
 
-    with open(f"douban.html","w", encoding="utf-8") as f:
-        f.write(content)
+    print(response.encoding)
+    with open(f"douban.html","w", encoding=response.encoding) as f:
+        f.write(txt)
     # 这是try的替代文件在这里已经被自动关闭了，即使上面发生了异常
 
-getBaidu()
+#getBaidu()
 get_douban()
