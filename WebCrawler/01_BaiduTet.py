@@ -36,8 +36,10 @@ def getBaidu():
 #豆瓣必须要加一个请求头才可以
 def get_douban():
     url = "https://m.douban.com/subject_collection/book_top250"
+
+    #这些值，可以用浏览器打开页面，然后右键--检查--网络，之后再刷新一下页面即可看见
     headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
             'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
             'Accept-Encoding': 'gzip, deflate, br',
@@ -45,14 +47,15 @@ def get_douban():
             'Referer': 'https://www.douban.com/',}
 
     response = requests.get(url,  headers=headers)
-    content = response.content
-    txt =  content.decode(response.encoding)
-    now_time = datetime.datetime.now()
+
+    txt = response.text
+    #now_time = datetime.datetime.now()
 
     print(response.encoding)
     with open(f"douban.html","w", encoding=response.encoding) as f:
         f.write(txt)
     # 这是try的替代文件在这里已经被自动关闭了，即使上面发生了异常
+
 
 #getBaidu()
 get_douban()
