@@ -24,8 +24,10 @@ python 知识：
 2， 如何使用切片做副本拷贝
 3， 注意列表的append 添加的是对象，而不是值。 如果要值，就要append 对象的切片，非常重要
 '''
+
+
 class Solution:
-    def dfs(self, nums,  current, result):
+    def dfs(self, nums, current, result):
         #1 定义递归的终止条件
         if len(current) == len(nums):
             #print(f"append{current}")
@@ -46,17 +48,17 @@ class Solution:
             current.pop()
         return
 
-
     def permute(self, nums: list[int]) -> list[list[int]]:
         result = []
-        current =[]
-        self.dfs(nums,current,result)
+        current = []
+        self.dfs(nums, current, result)
         #print(f"reuslt = {result}")
         return result
 
+
 if __name__ == "__main__":
     obj = Solution()
-    nums = [1,2,3]
+    nums = [1, 2, 3]
     result = obj.permute(nums)
     print(f"nums = {nums}, result = {result}")
 
@@ -64,11 +66,10 @@ if __name__ == "__main__":
     result = obj.permute(nums)
     print(f"nums = {nums}, result = {result}")
 
-    nums = [1,3,4,5]
+    nums = [1, 3, 4, 5]
     result = obj.permute(nums)
     print(f"nums = {nums}, result = {result}")
 
     nums = [0]
     result = obj.permute(nums)
     print(f"nums = {nums}, result = {result}")
-
