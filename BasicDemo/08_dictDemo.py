@@ -32,4 +32,10 @@ def testFib():
 
     dict.clear()
     print("afer clear, the len of dict is {}", len(dict))
+
+
+
+
+
 testFib()
+
