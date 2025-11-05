@@ -3,7 +3,7 @@
 '''
 
 '''
-搞个递归的样例耍耍
+搞个递归的样例
 def add(x: int, y: int) -> int:
 测试斐波那契的递归调用，现在是把临时状态都存储起来
 这里有个知识点：如果是符合类型的入参，要声明类型比如 y:list[int]
@@ -32,9 +32,6 @@ def testFib():
 
     dict.clear()
     print("afer clear, the len of dict is {}", len(dict))
-
-
-
 
 
 testFib()
