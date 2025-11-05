@@ -44,7 +44,7 @@ class Solution:
     def dfs(self, nums, target, start, current, answer):
         #1, 设置终止条件，找到就返回，题目保证150次必定有结果
         if target == 0:
-            #这里有坑，千万不要answer.append(current)，这里存的是对象而不是副本
+            #这里有坑，千万不要answer.append(current)，这存的是对象而不是副本
             one_combination = list(current)
             answer.append(one_combination)
             return
