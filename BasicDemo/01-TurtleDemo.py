@@ -1,6 +1,6 @@
 
 '''
-turtle功能有限，更多的是作为一个教学工具来做演示
+turtle功能有限，更多的是作为一个教学工具来做演示画图
 '''
 import  turtle as tt
 
@@ -55,5 +55,5 @@ def draw_cycle():
     # 点击窗口关闭
     screen.exitonclick()  # 点击画布窗口后退出
 
-#draw_rectangle()
+draw_rectangle()
 draw_cycle()

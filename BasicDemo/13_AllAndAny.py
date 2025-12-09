@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2025/11/15 11:05
 # @Author  : mac
-# @File    : 013_AllAndAny.py
+# @File    : 13_AllAndAny.py
 # @Software: PyCharm
 '''
 all 和any的测试

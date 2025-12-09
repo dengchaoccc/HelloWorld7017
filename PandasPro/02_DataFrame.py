@@ -59,12 +59,19 @@ def create_data_frame():
 
     # 使用 loc 为特定索引添加新行，如果值存在就改写，如果不存在就新增
     df6.loc[4] = ["Toma","22", "Boston1", 15]
-    #非常不推荐使用apend，麻烦很多，必须要用字典，而且要有返回值
+    #非常不推荐使用apend，麻烦很多，必须要用字典，而且要有返回值，官方推荐contact
     new_row = {"Name":"Mark", "Age":18,"City":"Houseton", "NewAddColumn":324}
     #主要原因是在使用 _append 方法时，它默认不会修改原始DataFrame，而是返回一个包含新增数据的新DataFrame对象
-    df6= df6._append(new_row, ignore_index=True)
+    df6 = df6._append(new_row, ignore_index=True)
+    #注意data这里有2层【】，否则会报错
+    #新插入的新数据，个数必须要一一致否则会报错
+    new_row = pd.DataFrame(data=[["new1", "new2","new3","new4"]], columns=["Name","Age","City","NewAddColumn"])
+    df6 = pd.concat([df6, new_row],ignore_index=True) # 将新行添加到原始DataFrame
+
     #并不会插入到第九行，而是在后面追加，实际插入第七行
     df6.loc[9] = ["Alex", "24", "DC", 345]
+
+
     df6.to_csv("create_dataframe_demo.csv", index=False)
 
 
