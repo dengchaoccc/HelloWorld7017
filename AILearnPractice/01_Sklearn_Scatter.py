@@ -17,7 +17,8 @@ import matplotlib.pyplot as plt
 逻辑回归函数 P(x) = 1/(1 + e**-x )
             P(x) = 1/(1 + e**-g(x) )
             g(x) = θo+θ₁X₁+θ₂X₂=0 
-            如果你要变成曲线，那么就要用平方二阶函数          
+            如果你要变成曲线，那么就要用平方二阶函数    
+            g(x) = θo+θ₁X₁+θ₂X₂ +θ3*X1平方 + θ4*X2平方+ θ5*X1*X2 =0       
 '''
 def read_data(file_name:str):
     df  = pd.read_csv(file_name)
@@ -43,7 +44,8 @@ def read_data(file_name:str):
     #plt.show()#没有这句话，散点图不会显示出来
     return x,y,label
 
-def logic_reg():
+#简单的逻辑回归，使用直线划分决策边界
+def simple_logic_reg():
     x,y,label = read_data("scatter_xy.csv")
 
     # 使用np.column_stack函数将x和y合并为两列的二维数组
@@ -59,5 +61,8 @@ def logic_reg():
     print(f"输入两个点的预测结果：{prediction}")
 
 
+
+
+
 if __name__ == "__main__":
-    logic_reg()
+    simple_logic_reg()
